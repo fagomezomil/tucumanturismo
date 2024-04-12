@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+body { 
+  margin: 0; 
+    padding: 0; 
+    background-color: white; 
+} 
+ 
+.navigation{ 
+  height: 50px; /* Ajusta la altura según tu diseño */ 
+    background-color: #333; /* Cambia el color de fondo según tus necesidades */ 
+    color: #fff; 
+} 
+ 
+.footer { 
+  height: 50px; /* Ajusta la altura según tu diseño */ 
+  color: #fff; /* Cambia el color del texto según tus necesidades */ 
+} 
+ 
+.content { 
+  min-height: 100vh; /* Calcula el alto mínimo para el contenido principal */ 
+  /* Resta el alto de la barra de navegación y el pie de página */ 
+  /* Ajusta el valor (100px) según la altura de tu barra de navegación y pie de página */ 
+  /* Esto asegura que el contenido principal tome el espacio restante */ 
+  background-color: white; /* Cambia el color de fondo según tus necesidades */ 
+ 
+} 
+ 
+#idioma { 
+  border: none; 
+  background-color: transparent; 
+  font-size: 13px; 
+  color: white; 
+} 
+ 
+.text-11{ 
+  font-size: 11px; 
+}
+
+.text-12{ 
+  font-size: 12px; 
+} 
+.text-13{ 
+  font-size: 13px; 
+} 
+ 
+.marginL54 { 
+  margin-left: -54%; 
+} 
+ 
+.barrita-clima { 
+  padding-top: 6px; 
+} 
+ 
+.logo { 
+  height: 40px;} 
+ 
+.video-container-mobile { 
+    height: 700px;
+    object-fit: cover;
+  } 
+
+ 
+.video-home { 
+ 
+    height: 860px; 
+    object-fit: cover; 
+  } 
+ 
+  .top-95 { 
+    top: 95%; 
+  } 
+ 
+  .btn-planifica { 
+    color: #868484;
+    padding: 10px 20px;
+  } 
+  .btn-planifica:focus { 
+    color: #ffffff;
+    background-color:  rgb(132 204 22);
+  } 
+ 
+  .btn-planifica:hover { 
+    color: #7C8F28 
+  } 
+   
+  .h-500 { 
+    height: 500px 
+  }
+
+  .h-700 {
+    height: 700px
+  }
+
+  .top-78 { 
+    top: 3rem; 
+  }
+
+  .h-100 {
+    height: 34rem
+  }
