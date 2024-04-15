@@ -59,8 +59,8 @@ const router = useRouter();
                       {menuGroup.subMenu?.map((menuItem, itemIndex) => (
                         <Link
                           key={itemIndex}
-                          href={`#`} // No es necesario redireccionar, solo manejar el click
-                          onClick={() => montarMenuClick(menuItem.nombre)}
+                          href={`/${removeAccents(menuItem.nombre).replace(/\s+/g,"").toLowerCase()}`} // No es necesario redireccionar, solo manejar el click
+                          
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-lime-600 hover:text-white hover:rounded-sm">
                           {menuItem.nombre}
                         </Link>
