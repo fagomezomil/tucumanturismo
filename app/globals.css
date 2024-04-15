@@ -137,7 +137,7 @@ body {
 
  
 .video-home { 
- 
+
     height: 860px; 
     object-fit: cover; 
   } 
@@ -165,6 +165,9 @@ body {
 
   .h-700 {
     height: 700px
+  }
+  .h-860 {
+    height: 860px
   }
 
   .top-78 { 

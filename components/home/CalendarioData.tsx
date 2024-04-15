@@ -1,3 +1,4 @@
+
 const CalendarioData = [
   {
     actividad: "Día Nacional de la Zamba",
@@ -8,6 +9,7 @@ const CalendarioData = [
     horario: "16:00 hs",
     lugar: "Virgen de la Merced 179 (6to piso), San Miguel de Tucumán",
     img: "/images/calendario/actividad1.jpeg",
+    href: "/actividad/1",
   },
   {
     actividad:
@@ -22,6 +24,7 @@ const CalendarioData = [
     lugar:
       "Consejo Profesional de la Ingeniería de Tucumán - Virgen de la Merced 179, San Miguel de Tucumán",
     img: "/images/calendario/actividad2.jpeg",
+    href: "/actividad/2",
   },
   {
     actividad:
@@ -35,6 +38,7 @@ const CalendarioData = [
     horario: "16:00 hs",
     lugar: "Colegio Médico de Tucumán - Las Piedras 496 San Miguel de Tucumán",
     img: "/images/calendario/actividad3.jpeg",
+    href: "/actividad/3",
   },
   {
     actividad: "Exposición de Fotografías",
@@ -43,6 +47,7 @@ const CalendarioData = [
     horario: "20:00 hs",
     lugar: "Salón Comunal - Amaicha del Valle",
     img: "/images/calendario/actividad4.jpeg",
+    href: "/actividad/4",
   },
   {
     actividad: "CITY TOUR - Tafí Viejo",
@@ -54,6 +59,8 @@ const CalendarioData = [
     horario: "9:00 hs",
     lugar: "Plaza Independencia - Mercado Municipal (Tafí Viejo)",
     img: "/images/calendario/actividad5.jpeg",
+    href: "/actividad/5",
   },
 ];
+
 export default CalendarioData;
