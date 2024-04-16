@@ -1,26 +1,28 @@
-import { useRouter } from "next/navigation";
-import { NavBarData } from "../../components/NavBarData";
+// "use client";
 
-// ...
+// import { useRouter } from "next/navigation";
+// import { NavBarData } from "../../components/NavBarData";
 
-const Article = () => {
-  const router = useRouter();
-  const { article } = router.query;
+// // ...
 
-  const navBarItem = NavBarData.find((item) => item.subMenu.toLowerCase().replace(/ /g, '-').replace(/á|é|í|ó|ú/g, 'a') === article);
+// const Article = () => {
+//   const router = useRouter();
+//   const { article } = router.query;
 
-  if (!navBarItem) {
-    return <div>Artículo no encontrado</div>;
-  }
+//   const navBarItem = NavBarData.find((item) => item.subMenu.toLowerCase().replace(/ /g, '-').replace(/á|é|í|ó|ú/g, 'a') === article);
 
-  return (
-    <div>
-      <h1>{navBarItem.title}</h1>
-      <img src={navBarItem.imgHeader} alt={navBarItem.title} />
-      <p>{navBarItem.text}</p>
-    </div>
-  );
-};
+//   if (!navBarItem) {
+//     return <div>Artículo no encontrado</div>;
+//   }
+
+//   return (
+//     <div>
+//       <h1>{navBarItem.title}</h1>
+//       <img src={navBarItem.imgHeader} alt={navBarItem.title} />
+//       <p>{navBarItem.text}</p>
+//     </div>
+//   );
+// };
 
 // "use client";
 // import Image from "next/image";

@@ -28,7 +28,7 @@ const CalendarioData = [
   },
   {
     actividad:
-      "Curso Superior de Medicina Interna: Avances en temas de Medicina Interna",
+      "Curso Superior de Medicina Interna: Avances en temas de Medicina Interna Curso Superior de Medicina Interna: Avances en temas de Medicina Interna",
     tipo: "Curso",
     síntesis:
       "El evento se realizará entre los días 5 y 6 de Abril del corriente año en nuestra provincia, precisamente en las instalaciones del Colegio Medico de Tucuman, salón Farall, ubicado en Combate de Las Piedras 496.",

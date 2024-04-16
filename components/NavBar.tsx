@@ -7,7 +7,7 @@ import Link from "next/link";
 import Logo from "../components/Logo";
 import NavBarData from "./NavBarData";
 import Clima from "./Clima";
-import { useRouter } from 'next/navigation';
+
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,11 +26,6 @@ const NavBar = () => {
 
 ;
 
-const router = useRouter();
-    const montarMenuClick = (path: string) => {
-      // Redirige a la ruta del artículo seleccionado usando router
-      router.push(`/articulo/${path}`);
-    };
 
   const removeAccents = (str: string): string =>
     str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -59,7 +54,14 @@ const router = useRouter();
                       {menuGroup.subMenu?.map((menuItem, itemIndex) => (
                         <Link
                           key={itemIndex}
-                          href={`/${removeAccents(menuItem.nombre).replace(/\s+/g,"").toLowerCase()}`} // No es necesario redireccionar, solo manejar el click
+                          href={`/${removeAccents(
+                            menuGroup.mainMenu.mainMenu.toLowerCase().replace(
+                              /\s+/g,
+                              ""
+                            )
+                          )}/${removeAccents(
+                            menuItem.nombre.toLowerCase().replace(/\s+/g, "")
+                          )}`}
                           
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-lime-600 hover:text-white hover:rounded-sm">
                           {menuItem.nombre}
@@ -98,7 +100,7 @@ const router = useRouter();
             {isMenuOpen && (
               <div
                 id="mobileDesplegado"
-                className="lg:hidden xl:hidden absolute top-24 inset-x-0 bg-black bg-opacity-50 text-center"
+                className="lg:hidden xl:hidden absolute top-24 inset-x-0 text-gray-600 bg-white text-center"
               >
                 {NavBarData.map((menuGroup, groupIndex) => (
                   <div key={groupIndex}>

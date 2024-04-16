@@ -1,18 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MdOutlineHiking } from "react-icons/md";
-import { HiOutlineMap } from "react-icons/hi2";
+
 import { FiClock } from "react-icons/fi";
-import { IoBusOutline, IoBedOutline, IoLocationOutline } from "react-icons/io5";
-import {
-  AiOutlineSchedule,
-  AiTwotoneShop,
-  AiOutlineFlag,
-  AiOutlineCar,
-} from "react-icons/ai";
-import { IconType } from "react-icons";
-import { barData } from "./BarData";
+import { IoLocationOutline } from "react-icons/io5";
+
 import Image from "next/image";
 
 import {
@@ -26,9 +18,6 @@ import { Card, CardContent, CardTitle } from "../ui/card";
 import calendarioData from "./CalendarioData";
 import Modal from "./Modal";
 
-
-
-// Define el tipo CalendarioDataItem
 interface CalendarioDataItem {
   actividad: string;
   tipo: string;
@@ -41,57 +30,11 @@ interface CalendarioDataItem {
   href: string;
 }
 
-interface BarDataItem {
-  icon: string;
-  name: string;
-  title: string;
-  text: string;
-  img: string;
-}
-
 export default function Home() {
-  const [selectedItem, setSelectedItem] = useState<BarDataItem | null>(null);
-  const [selectedEvent, setSelectedEvent] = useState<CalendarioDataItem | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<CalendarioDataItem | null>(
+    null
+  );
   const [isModalOpen, setModalOpen] = useState(false);
-
-  useEffect(() => {
-    setSelectedItem(barData[0]);
-  }, []);
-
-  const getIconComponent = (iconName: string): IconType | null => {
-    switch (iconName) {
-      case "IoBedOutline":
-        return IoBedOutline;
-      case "IoBusOutline":
-        return IoBusOutline;
-      case "AiOutlineCar":
-        return AiOutlineCar;
-      case "MdOutlineHiking":
-        return MdOutlineHiking;
-      case "AiTwotoneShop":
-        return AiTwotoneShop;
-      case "AiOutlineFlag":
-        return AiOutlineFlag;
-      case "AiOutlineSchedule":
-        return AiOutlineSchedule;
-      case "HiOutlineMap":
-        return HiOutlineMap;
-      default:
-        return null;
-    }
-  };
-
-  const handleIconClick = (item: BarDataItem) => {
-    setSelectedItem(item);
-  };
-
-  const dataSlider = [
-    { id: 1, title: "Aventura por Tierra", img: "/images/slide/slide1.jpg", href: "/naturaleza/aventuraportierra" },
-    { id: 2, title: "Aventura por Agua", img: "/images/slide/slide2.jpg", href: "/naturaleza/aventuraporagua" },
-    { id: 3, title: "Aventura por Aire", img: "/images/slide/slide3.jpg", href: "/naturaleza/aventuraporaire" },
-    { id: 4, title: "Áreas Protegidas", img: "/images/slide/slide4.jpg", href: "/naturaleza/areasprotegidas" },
-    { id: 5, title: "Espacios Verdes", img: "/images/slide/slide5.jpg", href: "/naturaleza/espaciosverdes" },
-  ];
 
   const handleEventClick = (event: CalendarioDataItem) => {
     setSelectedEvent(event);
@@ -106,7 +49,6 @@ export default function Home() {
   return (
     <>
       <main>
-        {/* Resto del código... */}
         <section>
           <div className="text-center my-9">
             <p className="uppercase text-3xl font-normal text-neutral-400">
@@ -161,30 +103,58 @@ export default function Home() {
             <CarouselNext />
           </Carousel>
         </section>
-        {/* Código restante */}
       </main>
-      {/* Añade el modal para mostrar los detalles del evento seleccionado */}
+
       {isModalOpen && selectedEvent && (
         <Modal isOpen={isModalOpen} onClose={closeModal}>
-          <div className="p-6">
-            <h2 className="text-xl font-bold mb-4">{selectedEvent.actividad}</h2>
-            <p>{selectedEvent.tipo}</p>
-            <p>{selectedEvent.fecha} - {selectedEvent.horario}</p>
-            <p>{selectedEvent.lugar}</p>
-            <Image
-              src={selectedEvent.img}
-              alt={selectedEvent.actividad}
-              width={500}
-              height={500}
-              className="mb-4"
-            />
-            {selectedEvent.síntesis && (
-              <p className="mb-4">{selectedEvent.síntesis}</p>
-            )}
-            {selectedEvent.descripcion && (
-              <p className="mb-4">{selectedEvent.descripcion}</p>
-            )}
-            <button onClick={closeModal} className="bg-lime-500 rounded-md text-white px-4 py-2">
+          <div>
+            <h2 className="text-xl font-bold mb-3 text-gray-700">
+              {selectedEvent.actividad}
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
+              <div className="grid-cols-1 mr-7">
+                <div className="mb-2">
+                  <span className="uppercase text-13 font-semibold text-gray-500">
+                    Tipo de evento:
+                  </span>{" "}
+                  <span className="text-13 font-bold">{selectedEvent.tipo}</span>
+                </div>
+                <div className="flex items-center mb-2">
+                  <span>
+                    <FiClock className="mr-2 text-sm" />
+                  </span>
+                  <span className="text-13 font-bold">
+                    {selectedEvent.fecha} -{selectedEvent.horario}
+                  </span>
+                </div>
+                <div className="flex items-center mb-2">
+                  <span>
+                    <IoLocationOutline className="mr-2 text-lg" />
+                  </span>{" "}
+                  <p className="text-13 font-bold">{selectedEvent.lugar}</p>
+                </div>
+                {selectedEvent.síntesis && (
+                  <p className="mb-4 mt-3 text-13">{selectedEvent.síntesis}</p>
+                )}
+                {selectedEvent.descripcion && (
+                  <p className="mb-4 mt-3 text-13">
+                    {selectedEvent.descripcion}
+                  </p>
+                )}
+              </div>
+              <div className="grid-cols-1 h-max">
+                <Image
+                  src={selectedEvent.img}
+                  alt={selectedEvent.actividad}
+                  width={400}
+                  height={300}
+                />
+              </div>
+            </div>
+            <button
+              onClick={closeModal}
+              className="bg-lime-500 rounded-md text-white px-4 py-2 mt-4"
+            >
               Cerrar
             </button>
           </div>
