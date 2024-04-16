@@ -1,3 +1,27 @@
+import { useRouter } from "next/navigation";
+import { NavBarData } from "../../components/NavBarData";
+
+// ...
+
+const Article = () => {
+  const router = useRouter();
+  const { article } = router.query;
+
+  const navBarItem = NavBarData.find((item) => item.subMenu.toLowerCase().replace(/ /g, '-').replace(/á|é|í|ó|ú/g, 'a') === article);
+
+  if (!navBarItem) {
+    return <div>Artículo no encontrado</div>;
+  }
+
+  return (
+    <div>
+      <h1>{navBarItem.title}</h1>
+      <img src={navBarItem.imgHeader} alt={navBarItem.title} />
+      <p>{navBarItem.text}</p>
+    </div>
+  );
+};
+
 // "use client";
 // import Image from "next/image";
 // import { GetServerSideProps } from "next";
