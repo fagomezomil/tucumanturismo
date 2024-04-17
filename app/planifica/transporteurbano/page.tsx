@@ -10,7 +10,7 @@ import {
 import Image from "next/image";
 import { FaMapLocationDot, FaRegFilePdf } from "react-icons/fa6";
 
-function page() {
+function Page() {
   return (
     <>
       <div className="max-w-7xl w-full mx-auto pt-28 mb-6 pl-6">
@@ -82,21 +82,10 @@ function page() {
             </div>
           </div>
         </div>
-        {/* <div className="">
-          <div className="mt-5">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui
-              tempora in consectetur modi mollitia alias dolorum ex eveniet
-              omnis repudiandae ea iste debitis neque, at cumque ipsum sapiente
-              nulla nesciunt numquam, fuga temporibus quos ut et dignissimos?
-              Dolore quaerat ratione reiciendis vel, iusto quisquam, incidunt
-              dolores illo doloribus, sed nostrum.
-            </p>
-          </div>
-        </div> */}
+        
       </div>
     </>
   );
 }
 
-export default page;
+export default Page;
