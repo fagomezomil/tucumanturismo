@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+"use client";
+import React, { useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 
 
@@ -11,36 +12,40 @@ interface ModalProps {
 
 // Creamos el componente Modal
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = useCallback((event: MouseEvent | KeyboardEvent) => {
+    if (event instanceof KeyboardEvent && event.key === "Escape") {
+      onClose();
+    }
+
+    if (
+      event instanceof MouseEvent &&
+      modalRef.current &&
+      !modalRef.current.contains(event.target as Node)
+    ) {
+      onClose();
+    }
+  }, [onClose]);
+
+  useEffect(() => {
+    const handleClick = handleClickOutside;
+    const handleKeyDown = handleClickOutside;
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClick);
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, handleClickOutside]);
 
   if (!isOpen) {
     return null;
   }
-
-  const handleClickOutside = (event: MouseEvent | KeyboardEvent) => {
-    if (
-      event.type === "click" &&
-      event.target instanceof Node &&
-      !(event.target as Node).isSameNode(modalRef.current)
-    ) {
-      onClose();
-    }
-
-    if (event.type === "keydown" && event.key === "Escape") {
-      onClose();
-    }
-  };
-
-  const modalRef = React.useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("keydown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleClickOutside);
-    };
-  }, []);
 
   return createPortal(
     <div ref={modalRef} className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -61,3 +66,4 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 };
 
 export default Modal;
+

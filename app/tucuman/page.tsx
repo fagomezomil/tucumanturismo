@@ -1,6 +1,6 @@
 import React from 'react'
 
-const tucuman = () => {
+const Tucuman = () => {
   return (
     <div>
       a
@@ -8,4 +8,4 @@ const tucuman = () => {
   )
 }
 
-export default tucuman
+export default Tucuman
