@@ -39,11 +39,10 @@ interface CalendarioDataItem {
   href: string;
 }
 
-export default function page() {
+export default function Page() {
   const [date, setDate] = React.useState<Date>();
-  const [selectedEvent, setSelectedEvent] = React.useState<CalendarioDataItem | null>(
-    null
-  );
+  const [selectedEvent, setSelectedEvent] =
+    React.useState<CalendarioDataItem | null>(null);
   const [isModalOpen, setModalOpen] = React.useState(false);
 
   const handleEventClick = (event: CalendarioDataItem) => {
@@ -54,7 +53,7 @@ export default function page() {
     setModalOpen(false);
     setSelectedEvent(null);
   };
-  
+
   return (
     <>
       <div className="max-w-7xl w-full mx-auto pt-28 mb-6 pl-6">
@@ -103,9 +102,7 @@ export default function page() {
             </div>
             <div className="flex items-center">
               <div>
-                <p className="ml-6 mr-4 uppercase text-13">
-                  Buscar por fecha:
-                </p>
+                <p className="ml-6 mr-4 uppercase text-13">Buscar por fecha:</p>
               </div>
               <div>
                 <Popover>
@@ -133,21 +130,27 @@ export default function page() {
               </div>
             </div>
             <div className="flex items-center">
-            <p className="ml-6 mt-3 mr-4 uppercase text-13">Buscar:</p>{" "}
+              <p className="ml-6 mt-3 mr-4 uppercase text-13">Buscar:</p>{" "}
               <input
                 type="text"
                 className="rounded-md text-xs font-semibold border-slate-400 border-1 mt-3 mx-2 p-2"
               />
-              <button className="bg-gray-400 hover:bg-gray-600 rounded-md text-xs font-semibold px-4 py-2 mt-3 mx-1 text-white"><IoSearchSharp /></button>
+              <button className="bg-gray-400 hover:bg-gray-600 rounded-md text-xs font-semibold px-4 py-2 mt-3 mx-1 text-white">
+                <IoSearchSharp />
+              </button>
             </div>
           </div>
         </div>
       </div>
       <div className="max-w-7xl w-full mx-auto grid grid-cols-3 gap-12 pl-6">
         {calendarioData.map((item, index) => (
-          <div key={index} className="text-14 text-gray-800 col-span-1" onClick={() => handleEventClick(item)}>
-            <Card className="h-100 " >
-              <CardContent className="flex items-center justify-center h-72 relative" >
+          <div
+            key={index}
+            className="text-14 text-gray-800 col-span-1"
+            onClick={() => handleEventClick(item)}
+          >
+            <Card className="h-100 ">
+              <CardContent className="flex items-center justify-center h-72 relative">
                 <div className="rounded-b-md bg-white text-gray-700 px-2 z-10 top-0 left-6 font-semibold absolute">
                   {item.fecha}
                 </div>
@@ -193,7 +196,9 @@ export default function page() {
                   <span className="uppercase text-13 font-semibold text-gray-500">
                     Tipo de evento:
                   </span>{" "}
-                  <span className="text-13 font-bold">{selectedEvent.tipo}</span>
+                  <span className="text-13 font-bold">
+                    {selectedEvent.tipo}
+                  </span>
                 </div>
                 <div className="flex items-center mb-2">
                   <span>
