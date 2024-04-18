@@ -52,7 +52,7 @@ function NotFound() {
         </BreadcrumbList>
       </Breadcrumb>
     </div>
-    <div className="max-w-7xl w-full mx-auto grid grid-cols-3 gap-12 pl-6">
+    <div className="max-w-7xl w-full mx-auto lg:grid lg:grid-cols-3 lg:gap-12 xl:grid xl:grid-cols-3 xl:gap-12 pl-6 pr-6">
       <div className="text-14 text-gray-800 mt-5 col-span-2">
         <p className="text-2xl">Título de artículo</p>
         <br />

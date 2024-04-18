@@ -7,6 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import Link from "next/link";
 import Image from "next/image";
 import { FaMapLocationDot, FaRegFilePdf } from "react-icons/fa6";
 
@@ -50,8 +51,14 @@ export default function page() {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
+      <div
+        id="titulo-articulo"
+        className="max-w-7xl w-full mt-6 pl-6 mb-6 mx-auto "
+      >
+        <p className="text-2xl">Circuitos de Tucumán</p>
+      </div>
       <div className="max-w-7xl w-full mx-auto pl-6">
-        <div className="mt-16 grid grid-cols-2">
+        <div className="mt-11 lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-2">
           <div className="w-fit justify-self-end">
             <Image
               src="/images/galeria/1.jpg"
@@ -68,9 +75,10 @@ export default function page() {
               nostrum quos magni sunt, dolor consequatur odit rem. Obcaecati
               nobis modi ducimus harum.
             </p>
-            <button className="bg-lime-500 rounded-md text-xs font-semibold px-5 py-2 mt-3 text-white">
-              Conocé más aquí
-            </button>
+            <Link href="/tucuman/destinosycircuitos/circuitoyungas">
+              <button className="bg-lime-500 rounded-md text-xs font-semibold px-5 py-2 mt-3 text-white">
+                Conocé más aquí
+              </button></Link>
           </div>
           <div className="mx-6 mt-32 ml-32">
             <p className="font-bold text-3xl text-gray-600">Circuito Valle Calchaquí</p>
@@ -80,9 +88,10 @@ export default function page() {
               nostrum quos magni sunt, dolor consequatur odit rem. Obcaecati
               nobis modi ducimus harum.
             </p>
-            <button className="bg-lime-500 rounded-md text-xs font-semibold px-5 py-2 mt-3 text-white">
-              Conocé más aquí
-            </button>
+            <Link href="/tucuman/destinosycircuitos/circuitovallecalchaqui">
+              <button className="bg-lime-500 rounded-md text-xs font-semibold px-5 py-2 mt-3 text-white">
+                Conocé más aquí
+              </button> </Link>
           </div>
           <div className="w-fit justify-self-start mt-20">
             <Image
@@ -93,7 +102,7 @@ export default function page() {
             />
           </div>
         </div>
-        <div className="mt-16 mb-16 grid grid-cols-2">
+        <div className="mt-16 mb-16 lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-2">
           <div className="w-fit justify-self-end">
             <Image
               src="/images/galeria/4.jpg"
@@ -110,9 +119,10 @@ export default function page() {
               nostrum quos magni sunt, dolor consequatur odit rem. Obcaecati
               nobis modi ducimus harum.
             </p>
-            <button className="bg-lime-500 rounded-md text-xs font-semibold px-5 py-2 mt-3 text-white">
-              Conocé más aquí
-            </button>
+            <Link href="/tucuman/destinosycircuitos/circuitosur">
+              <button className="bg-lime-500 rounded-md text-xs font-semibold px-5 py-2 mt-3 text-white">
+                Conocé más aquí
+              </button> </Link>
           </div>
           <div className="mx-6 mt-32 ml-32">
             <p className="font-bold text-3xl text-gray-600">Circuito Valle de Choromoro</p>
@@ -122,9 +132,10 @@ export default function page() {
               nostrum quos magni sunt, dolor consequatur odit rem. Obcaecati
               nobis modi ducimus harum.
             </p>
-            <button className="bg-lime-500 rounded-md text-xs font-semibold px-5 py-2 mt-3 text-white">
-              Conocé más aquí
-            </button>
+            <Link href="/tucuman/destinosycircuitos/circuitovalledechoromoro">
+              <button className="bg-lime-500 rounded-md text-xs font-semibold px-5 py-2 mt-3 text-white">
+                Conocé más aquí
+              </button> </Link>
           </div>
           <div className="w-fit justify-self-start mt-20">
             <Image

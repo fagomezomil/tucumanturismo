@@ -9,14 +9,14 @@ export default function Home() {
   return (
     <>
       <main>
-        <div className=" hidden md:flex lg:flex xl:flex">
-          <video width="auto"  height="860" autoPlay loop muted>
+        <div className=" hidden lg:flex xl:flex w-full">
+          <video width="2440"  height="1500" autoPlay loop muted content="fit" className="w-full">
             <source src="/video/video.mp4" type="video/mp4" />
             Tu navegador no soporta la reproducción de videos.
           </video>
         </div>
-        <div className="video-container-mobile flex sm:block md:hidden lg:hidden xl:hidden object-cover">
-          <video width="auto" height="700" autoPlay loop muted className="h-700 w-fit">
+        <div className="flex sm:block md:flex lg:hidden xl:hidden w-full">
+          <video width="2000" height="1500" autoPlay loop muted className="w-full">
             <source src="/video/video-mobile.mp4" type="video/mp4" />
             Tu navegador no soporta la reproducción de videos.
           </video>

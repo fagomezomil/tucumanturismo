@@ -125,9 +125,13 @@ export default function Planifica() {
                 <p className="text-neutral-800 text-sm mt-4 mb-4">
                   {selectedItem.text}
                 </p>
+                <Link href={"planifica/" +selectedItem.title.toLowerCase().replace(
+                                /\s+/g,
+                                ""
+                              )}>
                 <button className="bg-lime-500 rounded-md text-xs font-semibold px-5 py-2 mt-3 text-white">
                   Conocé más aquí
-                </button>
+                </button></Link>
               </div>
               {selectedItem.img && (
                 <Image
