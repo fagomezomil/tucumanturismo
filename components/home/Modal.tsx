@@ -48,8 +48,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   }
 
   return createPortal(
-    <div ref={modalRef} className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-6 pt-2 rounded-lg shadow-lg w-4/5 lg:w-2/4 xl:w-2/4 grid justify-items-end">
+    <div ref={modalRef} className="fixed inset-0 z-50 flex items-start justify-center bg-black bg-opacity-50  overflow-y-auto">
+      <div className="bg-white p-6 pt-2 rounded-lg shadow-lg w-4/5 lg:w-2/4 xl:w-2/4 grid justify-items-end  my-3 ">
         {/* Botón para cerrar el modal */}
         <button
           className="text-gray-700 font-bold text-xl"

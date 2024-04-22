@@ -107,58 +107,58 @@ export default function Home() {
 
       {isModalOpen && selectedEvent && (
         <Modal isOpen={isModalOpen} onClose={closeModal}>
-          <div>
-            <h2 className="text-xl font-bold mb-3 text-gray-700">
-              {selectedEvent.actividad}
-            </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
-              <div className="grid-cols-1 mr-7">
-                <div className="mb-2">
-                  <span className="uppercase text-13 font-semibold text-gray-500">
-                    Tipo de evento:
-                  </span>{" "}
-                  <span className="text-13 font-bold">{selectedEvent.tipo}</span>
-                </div>
-                <div className="flex items-center mb-2">
-                  <span>
-                    <FiClock className="mr-2 text-sm" />
-                  </span>
-                  <span className="text-13 font-bold">
-                    {selectedEvent.fecha} -{selectedEvent.horario}
-                  </span>
-                </div>
-                <div className="flex items-center mb-2">
-                  <span>
-                    <IoLocationOutline className="mr-2 text-lg" />
-                  </span>{" "}
-                  <p className="text-13 font-bold">{selectedEvent.lugar}</p>
-                </div>
-                {selectedEvent.síntesis && (
-                  <p className="mb-4 mt-3 text-13">{selectedEvent.síntesis}</p>
-                )}
-                {selectedEvent.descripcion && (
-                  <p className="mb-4 mt-3 text-13">
-                    {selectedEvent.descripcion}
-                  </p>
-                )}
+        <div className="overflow-y-auto">
+          <h2 className="text-xl font-bold mb-3 text-gray-700">
+            {selectedEvent.actividad}
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
+            <div className="grid-cols-1 mr-7">
+              <div className="mb-2">
+                <span className="uppercase text-13 font-semibold text-gray-500">
+                  Tipo de evento:
+                </span>{" "}
+                <span className="text-13 font-bold">{selectedEvent.tipo}</span>
               </div>
-              <div className="grid-cols-1 h-max">
-                <Image
-                  src={selectedEvent.img}
-                  alt={selectedEvent.actividad}
-                  width={400}
-                  height={300}
-                />
+              <div className="flex items-center mb-2">
+                <span>
+                  <FiClock className="mr-2 text-sm" />
+                </span>
+                <span className="text-13 font-bold">
+                  {selectedEvent.fecha} -{selectedEvent.horario}
+                </span>
               </div>
+              <div className="flex items-center mb-2">
+                <span>
+                  <IoLocationOutline className="mr-2 text-lg" />
+                </span>{" "}
+                <p className="text-13 font-bold">{selectedEvent.lugar}</p>
+              </div>
+              {selectedEvent.síntesis && (
+                <p className="mb-4 mt-3 text-13">{selectedEvent.síntesis}</p>
+              )}
+              {selectedEvent.descripcion && (
+                <p className="mb-4 mt-3 text-13">
+                  {selectedEvent.descripcion}
+                </p>
+              )}
             </div>
-            <button
-              onClick={closeModal}
-              className="bg-lime-500 rounded-md text-white px-4 py-2 mt-4"
-            >
-              Cerrar
-            </button>
+            <div className="grid-cols-1 h-max">
+              <Image
+                src={selectedEvent.img}
+                alt={selectedEvent.actividad}
+                width={400}
+                height={300}
+              />
+            </div>
           </div>
-        </Modal>
+          <button
+            onClick={closeModal}
+            className="bg-lime-500 rounded-md text-white px-4 py-2 mt-4"
+          >
+            Cerrar
+          </button>
+        </div>
+      </Modal>
       )}
     </>
   );
