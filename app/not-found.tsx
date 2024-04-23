@@ -16,11 +16,8 @@ function NotFound() {
   return (
     <>
       <div
-        className="bg-cover bg-center bg-no-repeat grid content-end"
-        style={{
-          backgroundImage: `url('/images/headers/nunorco.jpg')`,
-          height: "750px",
-        }}
+        className="bg-cover bg-fixed bg-left bg-no-repeat grid content-end bg-[url('/images/headers/nunorco.jpg')]  h-[450px] lg:h-[750px]"
+        
       >
         <div
           id="titulo-articulo"
@@ -92,34 +89,36 @@ function NotFound() {
           <p className="uppercase font-bold text-12 text-gray-600 mt-8">
             Galería de imágenes
           </p>
-          <Image
-            src="/images/galeria/1.jpg"
-            alt=""
-            width={400}
-            height={300}
-            className="mt-3"
-          />
-          <div className="md:w-fit sm:w-fit grid grid-cols-1 lg:grid lg:grid-cols-2 lg:gap-3 xl:grid xl:grid-cols-2 xl:gap-3 mt-2">
+          <div className="md:w-fit sm:w-fit md:grid md:grid-cols-3 lg:grid lg:grid-cols-1 md:gap-4">
             <Image
-              src="/images/galeria/2.jpg"
+              src="/images/galeria/1.jpg"
               alt=""
-              width={200}
-              height={150}
-              className="mt-1"
+              width={400}
+              height={300}
+              className="mt-3 w-full col-span-2"
             />
-            <Image
-              src="/images/galeria/3.jpg"
-              alt=""
-              width={200}
-              height={150}
-              className="mt-1"
-            />
+            <div className="grid grid-cols-1 lg:grid lg:grid-cols-2 lg:gap-3 xl:grid xl:grid-cols-2 xl:gap-3 mt-2">
+              <Image
+                src="/images/galeria/2.jpg"
+                alt=""
+                width={200}
+                height={150}
+                className="mt-1 w-full"
+              />
+              <Image
+                src="/images/galeria/3.jpg"
+                alt=""
+                width={200}
+                height={150}
+                className="mt-1 w-full"
+              />
+            </div>
           </div>
-          <div>
+          <div className="">
             <p className="uppercase font-bold text-12 text-gray-600 mt-8">
               Para descargar
             </p>
-            <div className="mt-4 ">
+            <div className="align-middle mt-4 grid grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-1">
               <div className="flex">
                 <FaMapLocationDot className="text-gray-500 text-5xl" />
                 <div className="ml-3 mt-1">
@@ -131,7 +130,7 @@ function NotFound() {
                   </p>
                 </div>
               </div>
-              <div className="flex mt-4">
+              <div className="flex mt-4 md:mt-0 lg:mt-4">
                 <FaRegFilePdf className="text-gray-500 text-5xl" />
                 <div className="ml-3 mt-1">
                   <p className="text-12 font-medium text-gray-600">
