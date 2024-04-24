@@ -9,7 +9,7 @@ import {
 import { PiGlobe } from "react-icons/pi";
 import { PiMagnifyingGlassBold } from "react-icons/pi";
 
-import PrestadoresData from "./PrestadoresData";
+import PrestadoresData from "../prestadoresactivos/PrestadoresData";
 interface PrestadoresData {
   titulo: string;
   subtitulo: string;
@@ -36,15 +36,15 @@ import Image from "next/image";
 import { FaRegFilePdf } from "react-icons/fa6";
 import Link from "next/link";
 
-function PrestadoresActivos() {
+function GuiasDeTurismoActivo() {
   return (
     <>
-      <div className="bg-cover bg-fixed bg-left bg-no-repeat grid content-end bg-[url('/images/headers/nunorco.jpg')]  h-[450px] lg:h-[750px]">
+      <div className="bg-cover bg-fixed bg-left bg-no-repeat grid content-end bg-[url('/images/planifica/guiasactivo.jpg')]  h-[450px] lg:h-[750px]">
         <div
           id="titulo-articulo"
           className="max-w-7xl w-full pl-6 mb-6 mx-auto text-4xl font-bold text-white text-left"
         >
-          Prestadores de Turismo Activo
+          Guías de Turismo Activo
         </div>
       </div>
       <div className="max-w-7xl w-full mx-auto mt-6 pl-6">
@@ -64,7 +64,7 @@ function PrestadoresActivos() {
             <BreadcrumbSeparator className="text-11" />
             <BreadcrumbItem>
               <BreadcrumbPage className="text-11">
-                Prestadores de Turismo Activo
+                Guías de Turismo Activo
               </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
@@ -73,7 +73,7 @@ function PrestadoresActivos() {
       <div className="max-w-7xl w-full mx-auto pl-6 pr-6">
         <div className="text-14 text-gray-800 mt-5 col-span-2">
           <p className="text-2xl">
-            Prestadores de Turismo Aventura Habilitados
+            Guías de Turismo Aventura Habilitados
           </p>
           <br />
           <p>
@@ -162,4 +162,4 @@ function PrestadoresActivos() {
   );
 }
 
-export default PrestadoresActivos;
+export default GuiasDeTurismoActivo;
