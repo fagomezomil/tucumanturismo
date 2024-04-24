@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { LiaFacebook, LiaInstagram, LiaEnvelope, LiaGlobeAmericasSolid, LiaPhoneVolumeSolid } from "react-icons/lia";
 
 import PrestadoresData from "./PrestadoresData";
 interface PrestadoresData {
@@ -7,11 +8,11 @@ interface PrestadoresData {
   subtitulo: string;
   direccion: string;
   localidad: string[];
-  actividades: string[];
+  actividades?: string[];
   contacto: string;
   email?: string;
   web?: string;
-  facebook?: string;
+  facebook?: URL;
   instagram?: string;
   rrss?: string;
 }
@@ -79,28 +80,33 @@ function NotFound() {
             en sus aguas.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-6">
-          {PrestadoresData.map((prestador) => (
-            <div>
-              <p className="font-bold text-md text-white bg-lime-600 p-4">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+          {PrestadoresData.map((prestador, index) => (
+            <div key={index} className="shadow-md rounded-sm h-fit">
+              <p className="font-bold text-md text-white bg-lime-600 p-4 rounded-t-md text-lg">
                 {prestador.titulo}
               </p>
               <div className="p-4">
-                <p className="text-slate-600 font-semibold">
+                <p className="text-slate-600 font-semibold text-md">
                   {prestador.subtitulo}
                 </p>
                 <p className="text-slate-500 italic text-sm">
                   {prestador.direccion}
                 </p>
                 <p className="text-slate-500 text-sm">{prestador.localidad}</p>
-                <p>{prestador.actividades}</p>
-                <p>{prestador.contacto}</p>
-                <p>{prestador.email}</p>
-                <p>{prestador.web}</p>
-                {/* <Link href={prestador.facebook}>Facebook</Link> */}
-                <p>{prestador.facebook}</p>
-                <p>{prestador.instagram}</p>
-                <p>{prestador.rrss}</p>
+                <p className="text-slate-600 text-sm uppercase font-medium mt-5 mb-1">Actividades habilitadas</p>
+                
+                {
+                  prestador.actividades.map((actividad, index) => (
+                    <ul key={index} className="list-disc px-4 inline-block"><li className="text-lime-800 font-medium text-md">{actividad}</li></ul>
+                  ))
+                }
+                <p className="mt-3 text-lg text-gray-800 font-medium"><LiaPhoneVolumeSolid className="inline-block text-lg mr-2"/>{prestador.contacto}</p>
+                <p className="mt-1 mb-3  text-slate-500 italic text-sm"><LiaEnvelope className="inline-block text-lg text-gray-800 mr-2" />{prestador.email}</p>
+                <p className="text-slate-600 text-sm uppercase font-medium mt-4 mb-1">Encontranos en</p>
+                <p className="text-3xl font-bold text-lime-700 inline-block mr-3"><LiaGlobeAmericasSolid /></p>
+                <p className="text-3xl font-bold text-lime-700 inline-block mr-3"><LiaFacebook /></p>
+                <p className="text-3xl font-bold text-lime-700 inline-block"><LiaInstagram /></p>
               </div>
             </div>
           ))}
