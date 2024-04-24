@@ -1,6 +1,13 @@
 "use client";
 import React from "react";
-import { LiaFacebook, LiaInstagram, LiaEnvelope, LiaGlobeAmericasSolid, LiaPhoneVolumeSolid } from "react-icons/lia";
+import {
+  LiaFacebook,
+  LiaInstagram,
+  LiaEnvelope,
+  LiaPhoneVolumeSolid,
+} from "react-icons/lia";
+import { PiGlobe } from "react-icons/pi";
+
 
 import PrestadoresData from "./PrestadoresData";
 interface PrestadoresData {
@@ -26,7 +33,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Image from "next/image";
-import { FaMapLocationDot, FaRegFilePdf } from "react-icons/fa6";
+import { FaRegFilePdf } from "react-icons/fa6";
 import Link from "next/link";
 
 function NotFound() {
@@ -83,10 +90,10 @@ function NotFound() {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
           {PrestadoresData.map((prestador, index) => (
             <div key={index} className="shadow-md rounded-sm h-fit">
-              <p className="font-bold text-md text-white bg-lime-600 p-4 rounded-t-md text-lg">
+              <p className="font-bold text-md text-white bg-lime-600 p-4  rounded-t-md text-lg">
                 {prestador.titulo}
               </p>
-              <div className="p-4">
+              <div className="p-4 pb-0">
                 <p className="text-slate-600 font-semibold text-md">
                   {prestador.subtitulo}
                 </p>
@@ -94,22 +101,48 @@ function NotFound() {
                   {prestador.direccion}
                 </p>
                 <p className="text-slate-500 text-sm">{prestador.localidad}</p>
-                <p className="text-slate-600 text-sm uppercase font-medium mt-5 mb-1">Actividades habilitadas</p>
-                
-                {
-                  prestador.actividades.map((actividad, index) => (
-                    <ul key={index} className="list-disc px-4 inline-block"><li className="text-lime-800 font-medium text-md">{actividad}</li></ul>
-                  ))
-                }
-                <p className="mt-3 text-lg text-gray-800 font-medium"><LiaPhoneVolumeSolid className="inline-block text-lg mr-2"/>{prestador.contacto}</p>
-                <p className="mt-1 mb-3  text-slate-500 italic text-sm"><LiaEnvelope className="inline-block text-lg text-gray-800 mr-2" />{prestador.email}</p>
-                <p className="text-slate-600 text-sm uppercase font-medium mt-4 mb-1">Encontranos en</p>
-                <p className="text-3xl font-bold text-lime-700 inline-block mr-3"><LiaGlobeAmericasSolid /></p>
-                <p className="text-3xl font-bold text-lime-700 inline-block mr-3"><LiaFacebook /></p>
-                <p className="text-3xl font-bold text-lime-700 inline-block"><LiaInstagram /></p>
+                <p className="text-slate-600 text-sm uppercase font-medium mt-5 mb-1">
+                  Actividades habilitadas
+                </p>
+
+                {prestador.actividades.map((actividad, index) => (
+                  <ul key={index} className="list-disc px-4 inline-block">
+                    <li className="text-lime-800 font-medium text-md">
+                      {actividad}
+                    </li>
+                  </ul>
+                ))}
+                <p className="mt-3 text-lg text-gray-800 font-medium">
+                  <LiaPhoneVolumeSolid className="inline-block text-lg mr-2 text-gray-600" />
+                  {prestador.contacto}
+                </p>
+                <p className="mt-1 mb-3  text-slate-500 italic text-sm">
+                  <LiaEnvelope className="inline-block text-lg text-gray-600 mr-2" />
+                  {prestador.email}
+                </p>
+                <p className="text-slate-600 text-sm uppercase font-medium mt-4 pb-1">
+                  Encontranos en
+                </p>
+                <p className="text-3xl font-bold text-lime-700 inline-block mr-3">
+                  <PiGlobe />
+                </p>
+                <p className="text-3xl font-bold text-lime-700 inline-block mr-3">
+                  <LiaFacebook />
+                </p>
+                <p className="text-3xl font-bold text-lime-700 inline-block">
+                  <LiaInstagram />
+                </p>
               </div>
+              <p className="text-slate-600 text-sm uppercase font-medium  px-4 mt-2">
+                Descargas
+              </p>
+              <p className="text-gray-500 italic font-semibold text-sm px-4 align-middle mt-1 mb-6">
+                  <FaRegFilePdf className="inline-block text-lg mr-2" />
+                  Credencial de habilitación
+                </p>
             </div>
           ))}
+          <div></div>
         </div>
       </div>
     </>
