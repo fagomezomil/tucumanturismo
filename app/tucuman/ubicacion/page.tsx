@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import Image from "next/image";
 import { FaMapLocationDot, FaRegFilePdf } from "react-icons/fa6";
-import TucumanArgentina from "./TucumanArgentina";
+
 
 function Ubicacion() {
   return (
