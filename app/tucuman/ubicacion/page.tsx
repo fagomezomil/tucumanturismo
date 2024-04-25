@@ -11,11 +11,12 @@ import {
 } from "@/components/ui/breadcrumb";
 import Image from "next/image";
 import { FaMapLocationDot, FaRegFilePdf } from "react-icons/fa6";
+import TucumanArgentina from "./TucumanArgentina";
 
 function Ubicacion() {
   return (
     <>
-      <div className="bg-cover bg-fixed bg-left bg-no-repeat grid content-end bg-[url('/images/headers/nunorco.jpg')]  h-[450px] lg:h-[750px]">
+      <div className="bg-cover bg-fixed bg-left bg-no-repeat grid content-end bg-[url('/images/headers/historica.jpg')]  h-[450px] lg:h-[750px]">
         <div
           id="titulo-articulo"
           className="max-w-7xl w-full pl-6 mb-6 mx-auto text-4xl font-bold text-white text-left"
@@ -65,48 +66,30 @@ function Ubicacion() {
             bajo la ‘lunita tucumana’.
           </p>
           <p className="uppercase font-bold text-12 text-gray-600 mt-8 mb-3">
-            Video
+            Mapa de Tucumán en el Norte Argentino
           </p>
-          <video
-            width="auto"
-            height="400"
-            autoPlay
-            loop
-            muted
-            className=" w-fit"
-          >
-            <source src="/video/video.mp4" type="video/mp4" />
-            Tu navegador no soporta la reproducción de videos.
-          </video>
+          <Image
+                src="/images/tucnoa.jpg"
+                alt=""
+                width={900}
+                height={1500}
+                className="mt-1 w-fit"
+              />
         </div>
         <div className="mt-5">
           <p className="uppercase font-bold text-12 text-gray-600 mt-8">
-            Galería de imágenes
+            Ubicación de Tucumán en Argentina
           </p>
           <div className="md:w-fit sm:w-fit md:grid md:grid-cols-3 lg:grid lg:grid-cols-1 md:gap-4">
+            
+           
             <Image
-              src="/images/galeria/1.jpg"
-              alt=""
-              width={400}
-              height={300}
-              className="mt-3 w-full col-span-2"
-            />
-            <div className="grid grid-cols-1 lg:grid lg:grid-cols-2 lg:gap-3 xl:grid xl:grid-cols-2 xl:gap-3 mt-2">
-              <Image
-                src="/images/galeria/2.jpg"
+                src="/images/mapatuc.jpg"
                 alt=""
-                width={200}
-                height={150}
-                className="mt-1 w-full"
+                width={600}
+                height={1500}
+                className="mt-1 w-fit"
               />
-              <Image
-                src="/images/galeria/3.jpg"
-                alt=""
-                width={200}
-                height={150}
-                className="mt-1 w-full"
-              />
-            </div>
           </div>
           <div className="">
             <p className="uppercase font-bold text-12 text-gray-600 mt-8">
@@ -120,7 +103,7 @@ function Ubicacion() {
                     Hacé click para descargar
                   </p>
                   <p className="font-bold text-gray-500">
-                    Mapa Circuito Las Yungas
+                    Mapa de la Provincia de Tucumán
                   </p>
                 </div>
               </div>
@@ -131,14 +114,17 @@ function Ubicacion() {
                     Hacé click para descargar
                   </p>
                   <p className="font-bold text-gray-500">
-                    Folleto Circuito Las Yungas
+                    Folleto de Circuitos Turísticos
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
+        
       </div>
+      
     </>
   );
 }
