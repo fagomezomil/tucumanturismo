@@ -12,15 +12,15 @@ import {
 import Image from "next/image";
 import { FaMapLocationDot, FaRegFilePdf } from "react-icons/fa6";
 
-function Ubicacion() {
+function CiudadHistorica() {
   return (
     <>
-      <div className="bg-cover bg-fixed bg-left bg-no-repeat grid content-end bg-[url('/images/headers/historica.jpg')]  h-[450px] lg:h-[750px]">
+      <div className="bg-cover bg-fixed bg-left bg-no-repeat grid content-end bg-[url('/images/headers/independencia.jpg')]  h-[450px] lg:h-[750px]">
         <div
           id="titulo-articulo"
           className="max-w-7xl w-full pl-6 mb-6 mx-auto text-4xl font-bold text-white text-left"
         >
-          Ubicación
+          Ciudad Histórica
         </div>
       </div>
       <div className="max-w-7xl w-full mx-auto mt-6 pl-6">
@@ -34,19 +34,23 @@ function Ubicacion() {
             <BreadcrumbSeparator className="text-11" />
             <BreadcrumbItem>
               <BreadcrumbLink className="text-11" href="/tucuman">
-                Tucumán
+                Historia y Cultura
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator className="text-11" />
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-11">Ubicación</BreadcrumbPage>
+              <BreadcrumbPage className="text-11">
+                Ciudad Histórica
+              </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
       </div>
       <div className="max-w-7xl w-full mx-auto md:grid md:grid-cols-1 lg:grid lg:grid-cols-3 lg:gap-12 xl:grid xl:grid-cols-3 xl:gap-12 pl-6 pr-6">
         <div className="text-14 text-gray-800 mt-5 col-span-2">
-          <p className="text-2xl">Vení y conocé Tucumán</p>
+          <p className="text-2xl">
+            Tucumán Capital de la Independencia Argentina
+          </p>
           <br />
           <p>
             El corazón de Argentina se encuentra en el Norte y se llama Tucumán.
@@ -62,11 +66,11 @@ function Ubicacion() {
             vibración de su capital, que se enciende mucho más por las noches
             bajo la ‘lunita tucumana’.
           </p>
-          <p className="uppercase font-bold text-12 text-gray-600 mt-8 mb-6">
-            Mapa de Tucumán en el Norte Argentino
+          <p className="uppercase font-bold text-12 text-gray-600 mt-8 mb-2">
+            Plano de San Miguel de Tucuman - "Ciudad Histórica"
           </p>
           <Image
-            src="/images/tucnoa.jpg"
+            src="/images/planosanmiguel.jpg"
             alt=""
             width={900}
             height={1500}
@@ -74,44 +78,56 @@ function Ubicacion() {
           />
         </div>
         <div className="mt-5">
-          <p className="uppercase font-bold text-12 text-gray-600 mt-8">
-            Ubicación de Tucumán en Argentina
+          <p className="uppercase font-bold text-12 text-gray-600 xl:mt-8">
+            Galería de imágenes
           </p>
-          <div className="md:w-fit sm:w-fit md:grid md:grid-cols-3 lg:grid lg:grid-cols-1 md:gap-4">
+          <Image
+            src="/images/galeria/1.jpg"
+            alt=""
+            width={400}
+            height={300}
+            className="mt-3"
+          />
+          <div className="grid grid-cols-2 gap-3 mt-2">
             <Image
-              src="/images/mapatuc.jpg"
+              src="/images/galeria/2.jpg"
               alt=""
-              width={600}
-              height={1500}
-              className="mt-3 w-fit"
+              width={200}
+              height={150}
+              className="mt-1"
+            />
+            <Image
+              src="/images/galeria/3.jpg"
+              alt=""
+              width={200}
+              height={150}
+              className="mt-1"
             />
           </div>
-          <div className="">
-            <p className="uppercase font-bold text-12 text-gray-600 mt-8">
-              Para descargar
-            </p>
-            <div className="align-middle mt-4 grid grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-1">
-              <div className="flex">
-                <FaMapLocationDot className="text-gray-500 text-5xl" />
-                <div className="ml-3 mt-1">
-                  <p className="text-12 font-medium text-gray-600">
-                    Hacé click para descargar
-                  </p>
-                  <p className="font-bold text-gray-500">
-                    Mapa de la Provincia de Tucumán
-                  </p>
-                </div>
+          <p className="uppercase font-bold text-12 text-gray-600 xl:mt-8">
+            Para descargar
+          </p>
+          <div className="mt-4 ">
+            <div className="flex">
+              <FaMapLocationDot className="text-gray-500 text-5xl" />
+              <div className="ml-3 mt-1">
+                <p className="text-12 font-medium text-gray-600">
+                  Hacé click para descargar
+                </p>
+                <p className="font-bold text-gray-500">
+                  Plano Ciudad Histórica
+                </p>
               </div>
-              <div className="flex mt-4 md:mt-0 lg:mt-4">
-                <FaRegFilePdf className="text-gray-500 text-5xl" />
-                <div className="ml-3 mt-1">
-                  <p className="text-12 font-medium text-gray-600">
-                    Hacé click para descargar
-                  </p>
-                  <p className="font-bold text-gray-500">
-                    Folleto de Circuitos Turísticos
-                  </p>
-                </div>
+            </div>
+            <div className="flex mt-4">
+              <FaRegFilePdf className="text-gray-500 text-5xl" />
+              <div className="ml-3 mt-1">
+                <p className="text-12 font-medium text-gray-600">
+                  Hacé click para descargar
+                </p>
+                <p className="font-bold text-gray-500">
+                  Folleto Circuito Ciudad Histórica
+                </p>
               </div>
             </div>
           </div>
@@ -121,4 +137,4 @@ function Ubicacion() {
   );
 }
 
-export default Ubicacion;
+export default CiudadHistorica;
