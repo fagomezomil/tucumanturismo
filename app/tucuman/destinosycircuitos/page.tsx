@@ -55,7 +55,7 @@ export default function page() {
         id="titulo-articulo"
         className="max-w-7xl w-full mt-6 pl-6 mb-6 mx-auto "
       >
-        <p className="text-2xl">Circuitos de Tucumán</p>
+        <p className="mt-20 text-3xl text-center font-light">Circuitos de Tucumán</p>
       </div>
       <div className="max-w-7xl w-full mx-auto pl-6">
         <div className="mt-11 lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-2">
