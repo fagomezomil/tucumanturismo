@@ -67,7 +67,7 @@ function CiudadHistorica() {
             bajo la ‘lunita tucumana’.
           </p>
           <p className="uppercase font-bold text-12 text-gray-600 mt-8 mb-2">
-            Plano de San Miguel de Tucuman - "Ciudad Histórica"
+            Plano de San Miguel de Tucuman - Ciudad Histórica
           </p>
           <Image
             src="/images/planosanmiguel.jpg"
