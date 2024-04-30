@@ -6,9 +6,9 @@ export default function logo() {
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
-        width="155px"
+        width="170px"
         height="14.64px"
-        viewBox="0 0 175.09 14.64"
+        viewBox="0 0 180 14.64"
         className="fill-white h-5 w-auto "
       >
         <style type="text/css"></style>
