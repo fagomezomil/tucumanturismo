@@ -4,6 +4,7 @@ import Banner from "../components/Banner";
 import Planifica from "../components/home/Planifica";
 import Imperdibles from "../components/home/Imperdibles";
 import Eventos from "../components/home/Eventos";
+import BannerGastronomia from "../components/home/BannerGastronomia";
 
 export default function Home() {
   return (
@@ -23,8 +24,8 @@ export default function Home() {
         </div>
         <Planifica />
       </main>
-      <section className="mt-11 mb-20 hidden md:flex lg:flex xl:flex">
-        <Banner bannerSrc="/images/banner.gif" />
+      <section>
+        <BannerGastronomia />
       </section>
       <section className="mt-11 mb-20 flex sm:flex md:hidden lg:hidden xl:hidden">
         <div className="bg-lime-700 w-full text-white font-semibold text-3xl text-center h-52 pt-24">
@@ -44,6 +45,9 @@ export default function Home() {
       </section>
       <section>
         <Eventos />
+      </section>
+      <section className="mt-11 mb-20 hidden md:flex lg:flex xl:flex">
+        <Banner bannerSrc="/images/banner.gif" />
       </section>
     </>
   );
