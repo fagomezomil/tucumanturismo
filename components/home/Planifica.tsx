@@ -115,7 +115,7 @@ export default function Planifica() {
           </div>
         </section>
         <section id="item-selected-planifica" className=" justify-center mb-16 hidden md:flex lg:flex xl:flex">
-          {/* Renderiza la información del ítem seleccionado */}
+          
           {selectedItem && (
             <div className="selected-item max-w-7xl flex mx-10 mt-10 overflow-hidden relative">
               <div className="bg-neutral-200 p-11 my-14 absolute w-96">
@@ -146,7 +146,7 @@ export default function Planifica() {
           )}
         </section>
         <section id="item-selected-planifica-mobile" className="flex justify-center sm:flex md:hidden lg:hidden xl:hidden">
-          {/* Renderiza la información del ítem seleccionado */}
+          
           {selectedItem && (
             <div className="selected-item max-w-7xl flex flex-col mt-4 overflow-hidden ">
               <div className="bg-neutral-200 p-5 ">
@@ -156,9 +156,13 @@ export default function Planifica() {
                 <p className="text-neutral-800 text-13 mt-4 mb-4">
                   {selectedItem.text}
                 </p>
+                <Link href={"planifica/" +selectedItem.title.toLowerCase().replace(
+                                /\s+/g,
+                                ""
+                              )}>
                 <button className="bg-lime-500 rounded-md text-11 font-semibold px-5 py-2 text-white">
                   Conocé más aquí
-                </button>
+                </button></Link>
               </div>
               <div>{selectedItem.img && (
                 <Image

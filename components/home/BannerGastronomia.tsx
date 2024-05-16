@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import Image from 'next/image';
+import Entumesa from "./gastronomia/Entumesa";
 
 const imagenes = [
-  {url: '/images/gastronomia/empanadas.jpg', texto: 'Conocé la Empanada más rica del país' , nombre: 'Empanadas', },
-  {url: '/images/gastronomia/milanesa.jpg', texto: 'Conocé la Milanesa más rica del mundo' , nombre: 'Milanesa', },
-  {url: '/images/gastronomia/locro.jpg' , texto: 'Conocé el Locro más rico del mundo' , nombre: 'Locro', },
+  { url: '/images/gastronomia/empanadas.jpg', texto: 'Disfrutá de la Empanada más rica del país', nombre: 'Empanadas', },
+  { url: '/images/gastronomia/milanesa.jpg', texto: 'No te pierdás la famosa Milanesa Tucumana', nombre: 'Milanesa', },
+  { url: '/images/gastronomia/locro.jpg', texto: 'Deleitate con gastronomía única', nombre: 'Locro', },
 ];
 
 export default function BannerGastronomia() {
@@ -19,13 +19,19 @@ export default function BannerGastronomia() {
   }, []);
 
   return (
-    <div className="h-[400px] mt-12">
+    <div className="mt-12">
       <div
-        className="bg-cover bg-fixed bg-left bg-no-repeat  h-[400px] w-full content-center transition-opacity duration-1000 ease-out"
+        className="bg-cover bg-fixed bg-left bg-no-repeat h-[600px] md:h-[400px] w-full content-center transition-opacity duration-1000 ease-in "
         style={{ backgroundImage: `url(${imagenes[currentImage].url})`, opacity: 1 }}
       >
-        <div className="max-w-7xl w-full pl-6 mb-6 mx-auto grid grid-cols-2">
-          <p className="text-6xl italic font-normal text-white text-right max-w-[500px]">{imagenes[currentImage].texto}</p>
+        <div className="max-w-7xl w-full pl-6 mb-6 mx-auto grid grid-cols-1 md:grid-cols-2">
+          <div className="text-right px-5">
+            <p className="drop-shadow-md text-5xl italic font-medium text-white text-right max-w-[500px]">{imagenes[currentImage].texto}</p>
+            <button className="bg-lime-500 rounded-md text-12 font-semibold px-5 py-2 mt-4  md:mr-24 text-white">
+              Conocé más aquí
+            </button>
+          </div>
+          <Entumesa />
         </div>
       </div>
     </div>

@@ -70,42 +70,46 @@ function Alojamiento() {
           <p className="text-2xl font-bold text-gray-600 text-center">
             Buscá aquí donde hospedarte
           </p>
-          <div className="flex justify-center mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 justify-around mx-auto mt-8">
+            <div className="flex mb-7">
             <PiMagnifyingGlassBold className="text-2xl text-gray-600 self-center" />{" "}
             <input
               type="text"
               placeholder="Ej. Hotel, Cabaña, Hostel, Glamping..."
-              className="w-[400px] text-lg ml-3 border-b-1 p-1"
+              className="w-full text-lg ml-3 border-b-1 p-1"
             />
-            <select
-              name="Categoria"
-              id="Categoria"
-              className="ml-4 p-3 text-gray-600 border-1 rounded-lg"
-            >
-              <option value="Hotel">Hotel</option>
-            </select>
-            <select
-              name="Categoria"
-              id="Categoria"
-              className="ml-4 p-3 text-gray-600 border-1 rounded-lg"
-            >
-              <option value="Hotel">Estrellas</option>
-            </select>
-            <select
-              name="Categoria"
-              id="Categoria"
-              className="ml-4 p-3 text-gray-600 border-1 rounded-lg"
-            >
-              <option value="Hotel">Localidad</option>
-            </select>
-            <button className="bg-lime-500 rounded-md text-xs font-semibold ml-4 px-5 py-2 mt-3 text-white">
-              Buscar
-            </button>
+            </div>
+            <div>
+              <select
+                name="Categoria"
+                id="Categoria"
+                className="ml-4 p-3 text-gray-600 border-1 rounded-lg"
+              >
+                <option value="Hotel">Hotel</option>
+              </select>
+              <select
+                name="Categoria"
+                id="Categoria"
+                className="ml-4 p-3 text-gray-600 border-1 rounded-lg"
+              >
+                <option value="Hotel">Estrellas</option>
+              </select>
+              <select
+                name="Categoria"
+                id="Categoria"
+                className="ml-4 p-3 text-gray-600 border-1 rounded-lg"
+              >
+                <option value="Hotel">Localidad</option>
+              </select>
+              <button className="bg-lime-500 rounded-md text-xs font-semibold ml-4 px-5 py-2 mt-3 text-white">
+                Buscar
+              </button>
+            </div>
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-10">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-10 justify-center">
           {[...Array(16)].map((_, i) => (
-            <div key={i} className="shadow-md my-3 rounded-md">
+            <div key={i} className="shadow-md my-3 rounded-md w-fit">
               <Image
                 src="/images/hotel.jpg"
                 alt=""
