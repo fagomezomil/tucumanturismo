@@ -4,8 +4,8 @@ export default function Entumesa() {
     return (
         <svg version="1.1"
             xmlns="http://www.w3.org/2000/svg"
-            x="0px" y="0px" width="500px" height="180px" viewBox="0 0 84.4 33"
-            className="fill-white drop-shadow-lg w-fit mx-6"
+            x="0px" y="0px"  viewBox="0 0 84.4 33"
+            className="fill-white drop-shadow-lg max-w-[450px] w-fit mx-6"
         >
             <style type="text/css">
 
