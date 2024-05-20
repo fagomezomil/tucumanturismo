@@ -329,7 +329,7 @@ export const NavBarData: NavBarDataType = [
     },
     {
         mainMenu: {
-            mainMenu: "Para Privados",
+            mainMenu: "Promos",
             tipo: "seccion"
         }
     },

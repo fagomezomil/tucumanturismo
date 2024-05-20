@@ -1,10 +1,27 @@
 import { useState, useEffect } from "react";
-import Entumesa from "./gastronomia/Entumesa";
+import RdelArtesano from "./productos/RdelArtesano";
+import RdelVino from "./productos/RdelVino";
+import RdeLaFe from "./productos/RdeLaFe";
 
 const imagenes = [
-  { url: '/images/productos/vino.jpg', texto: 'Disfrutá de la Empanada más rica del país', nombre: 'Empanadas', },
-  { url: '/images/productos/artesano.jpg', texto: 'No te pierdás la famosa Milanesa Tucumana', nombre: 'Milanesa', },
-  { url: '/images/productos/fe.jpg', texto: 'Deleitate con gastronomía única', nombre: 'Locro', },
+  {
+    url: "/images/productos/vino.jpg",
+    texto: "El sabor de Tucumán en cada copa",
+    nombre: "Ruta del Vino",
+    component: RdelVino,
+  },
+  {
+    url: "/images/productos/artesano.jpg",
+    texto: "Viví una experiencia artesanal",
+    nombre: "Ruta del Artesano",
+    component: RdelArtesano,
+  },
+  {
+    url: "/images/productos/fe.jpg",
+    texto: "Un viaje de Fe, un camino de encuentro",
+    nombre: "Ruta de la Fe",
+    component: RdeLaFe,
+  },
 ];
 
 export default function BannerProductos() {
@@ -18,21 +35,26 @@ export default function BannerProductos() {
     return () => clearInterval(intervalId);
   }, []);
 
+  const { url, texto, nombre, component: Component } = imagenes[currentImage];
+
   return (
-    <div className="mt-12">
-      <div
-        className="lg:bg-cover bg-fixed bg-left bg-no-repeat h-[600px] md:h-[400px] w-full content-center transition-opacity duration-1000 ease-in "
-        style={{ backgroundImage: `url(${imagenes[currentImage].url})`, opacity: 1 }}
-      >
-        <div className="max-w-7xl w-full pl-6 mb-6 mx-auto grid grid-cols-1 lg:grid-cols-2">
-          <div className="text-center lg:text-right px-5">
-            <p className="drop-shadow-md text-4xl lg:text-5xl italic font-medium text-white text-center lg:text-right max-w-[500px]">{imagenes[currentImage].texto}</p>
-            <button className="bg-lime-500 rounded-md text-12 font-semibold px-5 py-2 mt-4  md:mr-24 text-white">
-              Conocé más aquí
-            </button>
-          </div>
-          <Entumesa />
+    <div className="max-w-7xl mx-auto mt-12 grid lg:grid-cols-12">
+      <div className="col-span-4 content-center px-8 lg:px-0">
+        <Component />
+        <div className="ml-4 text-center lg:text-right">
+          <p className="mt-5 drop-shadow-md text-3xl italic font-medium text-[#434041] text-center lg:text-left max-w-[500px]">
+            {texto}
+          </p>
         </div>
+        <button className="ml-4 bg-lime-500 rounded-md text-12 font-semibold px-5 py-2 mt-4 text-white">
+          Conocé más aquí
+        </button>
+      </div>
+      <div
+        className="bg-cover bg-left bg-no-repeat h-[300px] w-full content-center col-span-8 transition-opacity duration-1000 ease-in "
+        style={{ backgroundImage: `url(${url})`, opacity: 1 }}
+      >
+        
       </div>
     </div>
   );
