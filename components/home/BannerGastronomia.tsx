@@ -21,7 +21,7 @@ export default function BannerGastronomia() {
   return (
     <div className="mt-12">
       <div
-        className="lg:bg-cover bg-cover bg-center bg-no-repeat h-[600px] md:h-[400px] w-full content-center transition-opacity duration-1000 ease-in "
+        className="lg:bg-cover bg-cover bg-fixed bg-center bg-no-repeat h-[600px] md:h-[400px] w-full content-center transition-opacity duration-1000 ease-in "
         style={{ backgroundImage: `url(${imagenes[currentImage].url})`, opacity: 1 }}
       >
         <div className="max-w-7xl w-full pl-6 mb-6 mx-auto grid grid-cols-1 lg:grid-cols-2">
