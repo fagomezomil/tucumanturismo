@@ -51,7 +51,7 @@ export default function Home() {
         <Eventos />
       </section>
       <section className="mt-11 mb-20 hidden md:flex lg:flex xl:flex">
-        <Banner bannerSrc="/images/banner.gif" />
+        <Banner bannerSrc="/images/banner.jpg" />
       </section>
     </>
   );
