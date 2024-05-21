@@ -6,7 +6,7 @@ export default function Entumesa() {
       
       viewBox="0 0 335 130"
       
-      className="drop-shadow-lg max-w-[450px] w-fit mx-6"
+      className="drop-shadow-lg max-w-[550px] w-fit mx-6"
     >
       <g>
         <g>
